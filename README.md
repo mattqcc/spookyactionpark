@@ -24,14 +24,15 @@ npm run build    # production build
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and set the R2 host once a bucket exists:
+Copy `.env.example` to `.env.local`. The R2 host is:
 
 ```
-NEXT_PUBLIC_R2_HOST=assets.spookyactionpark.com
+NEXT_PUBLIC_R2_HOST=r2.spookyactionpark.com
 ```
 
-`next.config.ts` whitelists this host for `next/image` optimization. Until it's
-set, any `*.r2.dev` host is allowed so dev URLs work out of the box.
+`next.config.ts` whitelists this host for `next/image` optimization. The bucket
+is currently empty — no image references exist in the page yet. Until the env
+var is set, any `*.r2.dev` host is also allowed so dev URLs work out of the box.
 
 ## Deployment
 
