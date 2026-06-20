@@ -66,7 +66,7 @@ export default function Home() {
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
             A research and commerce campus bringing quantum computing, sensing,
-            networking, and fabrication under one roof — where discovery and the
+            networking, and fabrication together — where discovery and the
             companies built on it share the same ground.
           </p>
           <a
