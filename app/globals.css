@@ -31,6 +31,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/*
+ * House rule: never leave a single word hanging on its own line at the end of
+ * a sentence (a typographic "orphan"). `text-wrap: pretty` keeps the last line
+ * from stranding one word; it degrades gracefully where unsupported.
+ */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
+}
+
 /* Scrims that keep overlaid text legible on the photo hero. */
 .scrim-top {
   background: linear-gradient(
