@@ -69,12 +69,6 @@ export default function Home() {
             networking, and fabrication together — where discovery and the
             companies built on it share the same ground.
           </p>
-          <a
-            href="mailto:hello@spookyactionpark.com"
-            className="mt-10 inline-block text-base text-q-cyan underline-offset-4 transition hover:underline"
-          >
-            Request information →
-          </a>
         </div>
       </section>
 
