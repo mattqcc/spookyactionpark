@@ -42,8 +42,8 @@ export default function Home() {
           </h1>
 
           <p className="rise mt-7 max-w-xl text-balance text-lg leading-relaxed text-white/90 [animation-delay:300ms] sm:text-xl">
-            A campus where quantum science becomes industry — the future home of
-            quantum, across the road from the Gigafactory.
+            The future home of quantum technology. The Gigafactory just got a
+            new neighbor.
           </p>
 
           <div className="rise mt-10 flex flex-col items-center gap-6 [animation-delay:420ms]">
