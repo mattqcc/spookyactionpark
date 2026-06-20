@@ -1,66 +1,95 @@
+import Image from "next/image";
+
+const HERO_IMAGE = "https://r2.spookyactionpark.com/site_drone_2025.jpg";
+
 export default function Home() {
   return (
-    <div className="field relative flex min-h-screen flex-col overflow-hidden">
-      {/* Top bar */}
-      <header className="relative z-10 flex items-center justify-between px-6 py-5 sm:px-10">
-        <div className="flex items-center gap-2.5">
-          <Glyph className="h-5 w-5 text-q-cyan" />
-          <span className="text-[13px] font-medium tracking-[0.2em] text-ink/90">
-            SPOOKY ACTION PARK
-          </span>
-        </div>
-        <span className="hidden text-[13px] tracking-[0.18em] text-muted sm:block">
-          AUSTIN · TEXAS
-        </span>
-      </header>
+    <>
+      {/* Full-bleed drone hero */}
+      <section className="relative flex h-[100svh] min-h-[600px] flex-col">
+        <Image
+          src={HERO_IMAGE}
+          alt="Aerial view of the Spooky Action Park campus site in Austin, Texas"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="scrim-top absolute inset-0" />
 
-      {/* Hero */}
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
-        <Entanglement className="rise mb-12 h-28 w-[260px] text-ink [animation-delay:0ms] sm:h-32 sm:w-[320px]" />
-
-        <p className="rise text-[12px] font-medium tracking-[0.32em] text-muted [animation-delay:120ms] sm:text-[13px]">
-          QUANTUM RESEARCH &amp; COMMERCE CAMPUS
-        </p>
-
-        <h1 className="rise mt-5 bg-gradient-to-b from-white to-white/60 bg-clip-text text-5xl font-semibold leading-[1.05] tracking-[-0.03em] text-transparent [animation-delay:200ms] sm:text-7xl md:text-8xl">
-          Spooky Action
-          <br className="hidden sm:block" /> Park
-        </h1>
-
-        <p className="rise mt-7 max-w-xl text-balance text-lg leading-relaxed text-muted [animation-delay:320ms] sm:text-xl">
-          A campus where quantum science becomes industry — built across the
-          road from the future, in Austin, Texas.
-        </p>
-
-        <div className="rise mt-10 flex flex-col items-center gap-6 [animation-delay:440ms]">
-          <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/[0.03] px-5 py-2 text-sm tracking-wide text-ink/80 backdrop-blur">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-q-cyan opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-q-cyan" />
+        {/* Top bar */}
+        <header className="relative z-10 flex items-center justify-between px-6 py-5 text-white sm:px-10">
+          <div className="flex items-center gap-2.5">
+            <Glyph className="h-5 w-5" />
+            <span className="text-[13px] font-medium tracking-[0.2em]">
+              SPOOKY ACTION PARK
             </span>
-            Coming soon
+          </div>
+          <span className="hidden text-[13px] tracking-[0.18em] text-white/80 sm:block">
+            AUSTIN · TEXAS
           </span>
+        </header>
 
+        {/* Overlaid hero copy */}
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center text-white">
+          <p className="rise text-[12px] font-medium tracking-[0.32em] text-white/85 [animation-delay:80ms] sm:text-[13px]">
+            QUANTUM RESEARCH &amp; COMMERCE CAMPUS
+          </p>
+
+          <h1 className="rise mt-5 text-5xl font-semibold leading-[1.05] tracking-[-0.03em] drop-shadow-sm [animation-delay:180ms] sm:text-7xl md:text-8xl">
+            Spooky Action
+            <br className="hidden sm:block" /> Park
+          </h1>
+
+          <p className="rise mt-7 max-w-xl text-balance text-lg leading-relaxed text-white/90 [animation-delay:300ms] sm:text-xl">
+            A campus where quantum science becomes industry — built across the
+            road from the future, in Austin, Texas.
+          </p>
+
+          <div className="rise mt-10 flex flex-col items-center gap-6 [animation-delay:420ms]">
+            <span className="inline-flex items-center gap-2.5 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm tracking-wide text-white backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+              </span>
+              Coming soon
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Light statement band */}
+      <section className="bg-paper px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">
+            Entanglement, at the scale of a city block.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
+            A research and commerce campus bringing quantum computing, sensing,
+            networking, and fabrication under one roof — where discovery and the
+            companies built on it share the same ground.
+          </p>
           <a
             href="mailto:hello@spookyactionpark.com"
-            className="text-sm tracking-wide text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
+            className="mt-10 inline-block text-base text-q-cyan underline-offset-4 transition hover:underline"
           >
             Request information →
           </a>
         </div>
-      </main>
+      </section>
 
       {/* Footer */}
-      <footer className="relative z-10 flex items-center justify-center px-6 py-6">
-        <p className="text-[12px] tracking-wide text-muted/70">
-          © {new Date().getFullYear()} Spooky Action Park
-        </p>
+      <footer className="border-t border-line bg-mist px-6 py-8">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 text-[13px] text-muted sm:flex-row">
+          <span>© {new Date().getFullYear()} Spooky Action Park</span>
+          <span className="tracking-[0.14em]">AUSTIN, TEXAS</span>
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
 
-/* Small entanglement mark used in the header. */
+/* Small entanglement mark — two particles linked across distance. */
 function Glyph({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
@@ -72,58 +101,6 @@ function Glyph({ className }: { className?: string }) {
         strokeWidth="1.4"
         strokeDasharray="1.5 3"
       />
-    </svg>
-  );
-}
-
-/*
- * The hero motif: two entangled particles connected across distance.
- * A literal nod to "spooky action at a distance."
- */
-function Entanglement({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 320 130"
-      fill="none"
-      className={className}
-      role="img"
-      aria-label="Two entangled quantum particles"
-    >
-      {/* connecting field line */}
-      <path
-        className="entangle-link"
-        d="M70 65 H250"
-        stroke="url(#beam)"
-        strokeWidth="1.5"
-      />
-
-      {/* left particle */}
-      <g className="particle-a">
-        <circle cx="70" cy="65" r="26" stroke="rgba(90,209,255,0.25)" />
-        <circle cx="70" cy="65" r="40" stroke="rgba(90,209,255,0.10)" />
-        <circle className="core text-q-cyan" cx="70" cy="65" r="7" fill="currentColor" />
-      </g>
-
-      {/* right particle */}
-      <g className="particle-b">
-        <circle cx="250" cy="65" r="26" stroke="rgba(155,123,255,0.25)" />
-        <circle cx="250" cy="65" r="40" stroke="rgba(155,123,255,0.10)" />
-        <circle
-          className="core text-q-violet"
-          cx="250"
-          cy="65"
-          r="7"
-          fill="currentColor"
-          style={{ animationDelay: "2s" }}
-        />
-      </g>
-
-      <defs>
-        <linearGradient id="beam" x1="70" y1="65" x2="250" y2="65" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#5ad1ff" />
-          <stop offset="1" stopColor="#9b7bff" />
-        </linearGradient>
-      </defs>
     </svg>
   );
 }

@@ -27,17 +27,24 @@ export const metadata: Metadata = {
     siteName: title,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://r2.spookyactionpark.com/site_drone_2025.jpg",
+        alt: "Aerial view of the Spooky Action Park campus site in Austin, Texas",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: ["https://r2.spookyactionpark.com/site_drone_2025.jpg"],
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050507",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };

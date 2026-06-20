@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #050507;
-  --color-ink: #f5f5f7;
-  --color-muted: #86868b;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-q-cyan: #5ad1ff;
-  --color-q-violet: #9b7bff;
+  --color-paper: #ffffff;
+  --color-mist: #fbfbfd;
+  --color-ink: #1d1d1f;
+  --color-muted: #6e6e73;
+  --color-line: rgba(0, 0, 0, 0.1);
+  --color-q-cyan: #0a84c4;
+  --color-q-violet: #6e5ad6;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display",
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html,
@@ -23,60 +24,24 @@ body {
 
 body {
   margin: 0;
-  background: var(--color-void);
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Ambient field — a faint quantum glow behind the hero. */
-.field {
-  background:
-    radial-gradient(
-      60% 50% at 50% 38%,
-      rgba(91, 123, 255, 0.14) 0%,
-      rgba(90, 209, 255, 0.06) 38%,
-      transparent 70%
-    ),
-    var(--color-void);
+/* Scrims that keep overlaid text legible on the photo hero. */
+.scrim-top {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0) 28%,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
-/* Two entangled particles — "spooky action at a distance." */
-@keyframes drift-a {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(4px, -6px);
-  }
-}
-@keyframes drift-b {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-4px, 6px);
-  }
-}
-@keyframes pulse-core {
-  0%,
-  100% {
-    opacity: 0.85;
-    filter: drop-shadow(0 0 6px currentColor);
-  }
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 16px currentColor);
-  }
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: -24;
-  }
-}
 @keyframes rise {
   from {
     opacity: 0;
@@ -88,34 +53,14 @@ body {
   }
 }
 
-.particle-a {
-  animation: drift-a 7s ease-in-out infinite;
-}
-.particle-b {
-  animation: drift-b 7s ease-in-out infinite;
-}
-.core {
-  animation: pulse-core 4s ease-in-out infinite;
-}
-.entangle-link {
-  stroke-dasharray: 2 6;
-  animation: dash 1.6s linear infinite;
-}
-
 .rise {
   opacity: 0;
   animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .particle-a,
-  .particle-b,
-  .core,
-  .entangle-link,
   .rise {
     animation: none;
-  }
-  .rise {
     opacity: 1;
   }
 }
